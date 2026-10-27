@@ -44,7 +44,7 @@ fastcon:
   adv_duration: 50        # Advertisement duration in milliseconds
   adv_gap: 10             # Gap between advertisements in milliseconds
   max_queue_size: 100     # Maximum number of queued commands
-  repeat_count: 2         # Repeat cout if commands are being missed/dropped
+  repeat_count: 2         # Number of times to send each command, increase if commands are being missed/dropped
 
 # Light configuration (add an entry for each light)
 light:
@@ -52,7 +52,14 @@ light:
     id: living_room_light
     name: "Living Room Light"
     light_id: 1                    # ID of the light (1-255)
-    default_transition_length: 0s  # Removes transition
+    default_transition_length: 0s  # 0s Removes transition, BLE is generally too slow for smooth changes (especially with repeated commands)
+
+  - platform: fastcon
+    id: kitchen_light
+    name: "Kitchen Light"
+    light_id: 2                   
+    default_transition_length: 0s 
+
 ```
 
 ### Configuration Variables
