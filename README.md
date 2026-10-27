@@ -52,7 +52,7 @@ light:
     id: living_room_light
     name: "Living Room Light"
     light_id: 1                    # ID of the light (1-255)
-    default_transition_length: 0s  # Removes transision
+    default_transition_length: 0s  # Removes transition
 ```
 
 ### Configuration Variables
